@@ -1,0 +1,128 @@
+/home/pascal/Nextcloud/
+# timestamp | duration | file | instruction | dir | modtime | etag | size | fileId | status | errorString | http result code | other size | other modtime | X-Request-ID
+#=#=#=# Syncrun started 2024-03-17T20:57:40Z
+#=#=#=# Syncrun finished 2024-03-17T20:57:40Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T20:57:51Z
+#=#=#=# Syncrun finished 2024-03-17T20:57:51Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T20:58:37Z
+#=#=#=# Syncrun finished 2024-03-17T20:58:37Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T20:59:41Z
+#=#=#=# Syncrun finished 2024-03-17T20:59:41Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:00:46Z
+#=#=#=# Syncrun finished 2024-03-17T21:00:46Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:01:51Z
+#=#=#=# Syncrun finished 2024-03-17T21:01:51Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T21:02:56Z
+#=#=#=# Syncrun finished 2024-03-17T21:02:56Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:04:01Z
+#=#=#=# Syncrun finished 2024-03-17T21:04:01Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:05:06Z
+#=#=#=# Syncrun finished 2024-03-17T21:05:06Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:06:11Z
+#=#=#=# Syncrun finished 2024-03-17T21:06:11Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:07:16Z
+#=#=#=# Syncrun finished 2024-03-17T21:07:16Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T21:08:21Z
+#=#=#=# Syncrun finished 2024-03-17T21:08:21Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T21:09:26Z
+#=#=#=# Syncrun finished 2024-03-17T21:09:26Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:10:31Z
+#=#=#=# Syncrun finished 2024-03-17T21:10:31Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:11:36Z
+#=#=#=# Syncrun finished 2024-03-17T21:11:36Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:12:41Z
+#=#=#=# Syncrun finished 2024-03-17T21:12:41Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:13:46Z
+#=#=#=# Syncrun finished 2024-03-17T21:13:46Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:14:51Z
+#=#=#=# Syncrun finished 2024-03-17T21:14:51Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:15:56Z
+#=#=#=# Syncrun finished 2024-03-17T21:15:56Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:17:01Z
+#=#=#=# Syncrun finished 2024-03-17T21:17:01Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:18:06Z
+#=#=#=# Syncrun finished 2024-03-17T21:18:06Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:19:11Z
+#=#=#=# Syncrun finished 2024-03-17T21:19:11Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:20:16Z
+#=#=#=# Syncrun finished 2024-03-17T21:20:16Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:21:21Z
+#=#=#=# Syncrun finished 2024-03-17T21:21:21Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T21:22:26Z
+#=#=#=# Syncrun finished 2024-03-17T21:22:26Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:23:31Z
+#=#=#=# Syncrun finished 2024-03-17T21:23:31Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:24:36Z
+#=#=#=# Syncrun finished 2024-03-17T21:24:36Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:25:41Z
+#=#=#=# Syncrun finished 2024-03-17T21:25:41Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:26:46Z
+#=#=#=# Syncrun finished 2024-03-17T21:26:46Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:27:51Z
+#=#=#=# Syncrun finished 2024-03-17T21:27:51Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:28:56Z
+#=#=#=# Syncrun finished 2024-03-17T21:28:56Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:30:01Z
+#=#=#=# Syncrun finished 2024-03-17T21:30:01Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:31:06Z
+#=#=#=# Syncrun finished 2024-03-17T21:31:06Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:32:11Z
+#=#=#=# Syncrun finished 2024-03-17T21:32:11Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:33:16Z
+#=#=#=# Syncrun finished 2024-03-17T21:33:16Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:34:21Z
+#=#=#=# Syncrun finished 2024-03-17T21:34:21Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:35:26Z
+#=#=#=# Syncrun finished 2024-03-17T21:35:26Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:36:31Z
+#=#=#=# Syncrun finished 2024-03-17T21:36:31Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:37:36Z
+#=#=#=# Syncrun finished 2024-03-17T21:37:36Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:38:41Z
+#=#=#=# Syncrun finished 2024-03-17T21:38:41Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T21:39:46Z
+#=#=#=# Syncrun finished 2024-03-17T21:39:46Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:40:51Z
+#=#=#=# Syncrun finished 2024-03-17T21:40:51Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:41:56Z
+#=#=#=# Syncrun finished 2024-03-17T21:41:56Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T21:43:01Z
+#=#=#=# Syncrun finished 2024-03-17T21:43:01Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:44:06Z
+#=#=#=# Syncrun finished 2024-03-17T21:44:06Z (last step: 2 msec, total: 2 msec)
+#=#=#=# Syncrun started 2024-03-17T21:45:11Z
+#=#=#=# Syncrun finished 2024-03-17T21:45:11Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:46:16Z
+#=#=#=# Syncrun finished 2024-03-17T21:46:16Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:47:21Z
+#=#=#=# Syncrun finished 2024-03-17T21:47:21Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:48:26Z
+#=#=#=# Syncrun finished 2024-03-17T21:48:26Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:49:31Z
+#=#=#=# Syncrun finished 2024-03-17T21:49:31Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:50:36Z
+#=#=#=# Syncrun finished 2024-03-17T21:50:36Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:51:41Z
+#=#=#=# Syncrun finished 2024-03-17T21:51:41Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:52:46Z
+#=#=#=# Syncrun finished 2024-03-17T21:52:46Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:53:51Z
+#=#=#=# Syncrun finished 2024-03-17T21:53:51Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:54:56Z
+#=#=#=# Syncrun finished 2024-03-17T21:54:56Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:56:01Z
+#=#=#=# Syncrun finished 2024-03-17T21:56:01Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:57:06Z
+#=#=#=# Syncrun finished 2024-03-17T21:57:06Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T21:58:11Z
+#=#=#=# Syncrun finished 2024-03-17T21:58:11Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T21:59:16Z
+#=#=#=# Syncrun finished 2024-03-17T21:59:16Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T22:00:21Z
+#=#=#=# Syncrun finished 2024-03-17T22:00:21Z (last step: 3 msec, total: 3 msec)
+#=#=#=# Syncrun started 2024-03-17T22:01:26Z
+#=#=#=# Syncrun finished 2024-03-17T22:01:26Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T22:02:31Z
+#=#=#=# Syncrun finished 2024-03-17T22:02:31Z (last step: 4 msec, total: 4 msec)
+#=#=#=# Syncrun started 2024-03-17T22:03:36Z
+#=#=#=# Syncrun finished 2024-03-17T22:03:36Z (last step: 2 msec, total: 2 msec)
