@@ -1,0 +1,7 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "candy-icons";
+}
+@theme "/home/pascal/.local/share/rofi/themes/launchpad.rasi"
