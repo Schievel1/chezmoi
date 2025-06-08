@@ -1,0 +1,22 @@
+# /etc/skel/.bash_profile
+
+# This file is sourced by bash for login shells.  The following line
+# runs your .bashrc and is recommended by the bash info pages.
+if [[ -f ~/.bashrc ]] ; then
+	. ~/.bashrc
+fi
+. "$HOME/.cargo/env"
+export DOOMDIR=${XDG_CONFIG_HOME}/doom
+
+export PATH="$HOME/.config/emacs/bin:$HOME/.local/bin:$HOME/bin:$HOME/dev/platform-tools:$JAVA_HOME/bin:$PATH:$HOME/.cargo/bin"
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+export PATH="$HOME/dev/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu/bin:$PATH"
+export PATH="/home/$USER/go/bin:/home/$USER/.local/bin:$NPM_CONFIG_PREFIX/bin:$PATH"
+
+export GPG_TTY=$TTY
+export EDITOR="emacsclient -t -r -n -a emacs -nw"
+. "$HOME/.cargo/env"
+
+export FZF_DEFAULT_OPTS="--layout=reverse --exact --color=dark --cycle --ignore-case --height 20 --bind tab:accept"

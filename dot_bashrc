@@ -1,0 +1,57 @@
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+  # Shell is non-interactive.  Be done now!
+  return
+fi
+
+neofetch
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/pascal/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "/home/pascal/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "/home/pascal/miniconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="/home/pascal/miniconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+source ~/.local/share/blesh/ble.sh
+eval "$(atuin init bash)"
+eval "$(starship init bash)"
+eval "$(zoxide init bash --cmd cd)"
+eval "$(fzf --bash)"
+eval "$(command repo-cd --bash=rcd)"
+eval "$(command workdir-cd --bash=w)"
+
+function z() {
+  __zoxide_z "$@"
+}
+
+function zi() {
+  __zoxide_zi "$@"
+}
+
+alias ls='lsd'
+alias l='lsd -la'
+alias cat='bat --paging=never'
+alias du='dust'
+alias e='emacsclient -t -r -n -a emacs'
+
+if [[ -z "$INSIDE_EMACS" ]]; then # not inside emacs
+  [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+fi
+
+# disable ESC timeout
+bind 'set keyseq-timeout 1'
+
+# enable fzf tab completion
+#source ~/.config/fzf-tab-completion/bash/fzf-bash-completion.sh
+#bind -x '"\t": fzf_bash_completion'

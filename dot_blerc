@@ -1,0 +1,76 @@
+# blerc
+
+# If ble/contrib/integration/fzf cannot find the fzf directory, please set the
+# following variable "_ble_contrib_fzf_base" manually.  The value
+# "/path/to/fzf-directory" should be replaced by a path to the fzf directory
+# such as "$HOME/.fzf" or "/usr/share/fzf" that contain
+# "shell/{completion,key-bindings}.bash" or "{completion,key-bindings}.bash".
+
+# _ble_contrib_fzf_base=$HOME/.fzf
+
+# Note: If you would like to combine fzf-completion with bash_completion, you
+# need to load bash_completion earlier than fzf-completion.
+
+# source /etc/profile.d/bash_completion.sh
+
+# blerc
+
+# Setup fzf
+ble-import -d integration/fzf-completion
+ble-import -d integration/fzf-key-bindings
+ble-import -d integration/fzf-menu
+
+# Change default color scheme for ble.sh
+ble-face auto_complete=fg=242,bg=transparent
+ble-face command_builtin=fg=green
+ble-face syntax_error=fg=red,bold
+# ble-face command_file=fg=217
+# ble-face filename_directory=fg=147,underline
+# ble-face command_directory=fg=147,underline
+# ble-face filename_url=fg=116,underline
+# ble-face syntax_quoted=fg=151
+
+# Change default key bindings for ble.sh
+ble-bind -m 'auto_complete' -f C-y auto_complete/insert-on-end
+
+# disable shell bells
+bleopt edit_abell=
+bleopt edit_vbell=
+
+# disable exit status mark (i.e.: "[ble: exit ???]")
+bleopt exec_errexit_mark=
+
+if [[ -z "$INSIDE_EMACS" ]]; then # not inside emacs
+    # enable vi mode
+    bleopt default_keymap=vi
+fi
+
+# change cursor shape based on current mode
+function blerc-vim-mode-cursor() {
+    ble-bind -m vi_nmap --cursor 2
+    ble-bind -m vi_imap --cursor 5
+    ble-bind -m vi_omap --cursor 4
+    ble-bind -m vi_xmap --cursor 2
+    ble-bind -m vi_cmap --cursor 0
+}
+
+# key bindings
+function blerc-vim-mode-bindings() {
+    # cancel input
+    ble-bind -m vi_imap -f 'C-c' discard-line
+    ble-bind -m vi_nmap -f 'C-c' discard-line
+
+    # delete previous word
+    ble-bind -m vi_imap -f 'M-C-?' kill-backward-cword
+    ble-bind -m vi_imap -f 'M-DEL' kill-backward-cword
+    ble-bind -m vi_imap -f 'M-C-h' kill-backward-cword
+    ble-bind -m vi_imap -f 'M-BS'  kill-backward-cword
+}
+function blerc-vim-mode-hook() {
+    bleopt keymap_vi_mode_show=
+
+    blerc-vim-mode-cursor
+    blerc-vim-mode-bindings
+}
+
+blehook/eval-after-load keymap_vi blerc-vim-mode-hook
