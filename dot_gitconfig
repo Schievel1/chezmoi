@@ -1,30 +1,44 @@
 [user]
-	email = pascal.jaeger@leimstift.de
 	name = Pascal Jäger
-	signingkey = 9DF5441454F67138
-[gpg]
-	program = gpg2
-[commit]
-	gpgsign = true
-[safe]
-	directory = /var/db/repos/guru
-	directory = /var/db/repos/gentoo
-	directory = /var/db/repos/gentoo
-[alias]
-l = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
-c = checkout
-cb = checkout -b
-s = status --short
+	email = pascal.jaeger@leimstift.de
 [init]
 	defaultBranch = main
+[safe]
+	directory = %(prefix)///wsl$/Gentoo/home/pascal/dev/docker_trdp_rohling
+	directory = %(prefix)///wsl$/Gentoo/home/pascal/dev/docker_trdp_rohling
+	directory = /var/tmp/portage/app-editors/neovide-0.12.2/work
+[alias]
+	c   = checkout
+	cb  = checkout -b
+	l   = log --all --decorate  --graph --oneline
+	log = log --graph
+	s   = status --short
+
+# [core]
+    # pager = less
+
+# [merge]
+    # conflictstyle = diff3
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    line-numbers = true
+    side-by-side = true
+    diff-so-fancy = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    colorMoved = default
 [github]
 	user = Schievel1
-[core]
-	editor = vim
-	pager = delta
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	navigate = true
-[merge]
-	conflictStyle = zdiff3
+[credential]
+	helper = cache

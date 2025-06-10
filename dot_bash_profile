@@ -19,4 +19,4 @@ export GPG_TTY=$TTY
 export EDITOR="emacsclient -t -r -n -a emacs -nw"
 . "$HOME/.cargo/env"
 
-export FZF_DEFAULT_OPTS="--layout=reverse --exact --color=dark --cycle --ignore-case --height 20 --bind tab:accept"
+export FZF_DEFAULT_OPTS="--layout=reverse --color=dark --cycle --ignore-case --height 20 --bind tab:accept"
