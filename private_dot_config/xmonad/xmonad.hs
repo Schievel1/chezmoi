@@ -172,6 +172,7 @@ myStartupHook = do
     addMonitorCorner SCUpperLeft 0 20 (spawn "rofi -show drun")
     addMonitorCorner SCUpperLeft 1 20 (spawn "rofi -show drun")
     addMonitorCorner SCUpperLeft 2 20 (spawn "rofi -show drun")
+    spawnOnce "xmodmap -e 'keysym Super_L = Multi_key'"
     setWMName "LG3D"
 
 myColorizer :: Window -> Bool -> X (String, String)
