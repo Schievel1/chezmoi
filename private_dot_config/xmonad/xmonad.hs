@@ -105,6 +105,8 @@ import System.FilePath ((</>))
 import System.Random (randomRIO)
 import Control.Monad (filterM)
 import Control.Applicative ((<|>))
+import Control.Concurrent (threadDelay)
+import Control.Monad (void)
 
 myFont :: String
 myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=9:antialias=true:hinting=true"
@@ -124,13 +126,13 @@ myMail :: String
 myMail = "thunderbird-bin"  -- Sets evolution as mail client
 
 myFiles :: String
-myFiles = "pcmanfm"  -- Sets nautilus as file browser
+myFiles = "nautilus"  -- Sets nautilus as file browser
 
 myEmacs :: String
-myEmacs = "emacsclient -c -a 'emacs' "  -- Makes emacs keybindings easier to type
+myEmacs = "emacsclient -c -a 'emacs' -s /tmp/emacs1000/server"  -- Makes emacs keybindings easier to type
 
 myEditor :: String
-myEditor = "emacsclient -c -a 'emacs' "  -- Sets emacs as editor
+myEditor = "emacsclient -c -a 'emacs' -s /tmp/emacs1000/server"  -- Sets emacs as editor
 
 myBorderWidth :: Dimension
 myBorderWidth = 2           -- Sets border width for windows
@@ -147,32 +149,31 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "/usr/libexec/polkit-gnome-authentication-agent-1 &"
+    spawnOnce "gentoo-pipewire-launcher restart &"
     spawnOnce "picom --config $HOME/.config/picom.conf &"
     spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
     spawnOnce "xscreensaver --no-splash &"
     spawnOnce "trayer-srg --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34  --height 24 --monitor 1 &"
-    spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
-    spawnOnOnce ( myWorkspaces !! 0 ) "firefox-bin"
-    spawnOnOnce ( myWorkspaces !! 1 ) "emacsclient -c -a 'emacs'"
-    spawnOnOnce ( myWorkspaces !! 2 ) "alacritty"
-    spawnOnOnce ( myWorkspaces !! 3 ) "pcmanfm"
-    spawnOnOnce ( myWorkspaces !! 4 ) "thunderbird-bin"
+    -- spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
     spawnOnce "nextcloud --background"
-    spawnOnce "gnome-encfs-manager"
+    -- spawnOnce "gnome-encfs-manager"
     spawnOnce "hp-systray"
     spawnOnce "flameshot"
-    windows (greedyViewOnScreen 0 ( myWorkspaces !! 0 ))
-    windows (greedyViewOnScreen 1 ( myWorkspaces !! 1 ))
-    -- windows (greedyViewOnScreen 2 ( myWorkspaces !! 3 ))
-    setDefaultCursor xC_left_ptr
-   -- addMonitorCorner SCTop 0 5 (spawn "rofi -show window")
-   -- addMonitorCorner SCTop 1 5 (spawn "rofi -show window")
-   -- addMonitorCorner SCTop 2 5 (spawn "rofi -show window")
+    spawnOnce "xmodmap -e 'keysym Super_L = Multi_key'"
     addMonitorCorner SCUpperLeft 0 20 (spawn "rofi -show drun")
     addMonitorCorner SCUpperLeft 1 20 (spawn "rofi -show drun")
     addMonitorCorner SCUpperLeft 2 20 (spawn "rofi -show drun")
-    spawnOnce "xmodmap -e 'keysym Super_L = Multi_key'"
+    spawnOnOnce ( myWorkspaces !! 0 ) "firefox-bin"
+    spawnOnOnce ( myWorkspaces !! 1 ) "emacsclient -c -a 'emacs' -s /tmp/emacs1000/server"
+    spawnOnOnce ( myWorkspaces !! 2 ) "alacritty"
+    spawnOnOnce ( myWorkspaces !! 3 ) "nautilus"
+    spawnOnOnce ( myWorkspaces !! 4 ) "thunderbird-bin"
+    io $ threadDelay 1000000
+    windows (greedyViewOnScreen 0 ( myWorkspaces !! 0 ))
+    windows (greedyViewOnScreen 1 ( myWorkspaces !! 1 ))
+    windows (greedyViewOnScreen 2 ( myWorkspaces !! 2 ))
+    setDefaultCursor xC_left_ptr
     setWMName "LG3D"
 
 myColorizer :: Window -> Bool -> X (String, String)
@@ -206,12 +207,12 @@ spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
                    }
 
 myAppGrid = [ ("Audacity", "audacity")
-                 , ("Emacs", "emacsclient -c -a emacs")
+                 , ("Emacs", "emacsclient -c -a emacs -s /tmp/emacs1000/server")
                  , ("Alacritty", "alacritty")
                  , ("Firefox", "firefox-bin")
                  , ("LibreOffice Impress", "loimpress")
                  , ("LibreOffice Writer", "lowriter")
-                 , ("PCManFM", "pcmanfm")
+                 , ("Files", "nautilus")
                  ]
 
 --Makes setting the spacingRaw simpler to write. The spacingRaw module adds a configurable amount of space around windows.
@@ -344,13 +345,16 @@ myManageHook = composeAll
      , className =? "Places"         --> doFloat
      , className =? "Yad"             --> doCenterFloat
      , title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 0 )
-     , title =? "Mozilla Thunderbird" --> doShift ( myWorkspaces !! 3 )
-     , className =? "Evolution"      --> doShift ( myWorkspaces !! 3 )
-     , className =? "emacs"      --> doShift ( myWorkspaces !! 2 )
-     , className =? "mpv"             --> doShift ( myWorkspaces !! 5 )
+     , className =? "Emacs" --> doShift ( myWorkspaces !! 1 )
+     , className =? "emacs"      --> doShift ( myWorkspaces !! 1 )
      , className =? "pcmanfm" --> doShift ( myWorkspaces !! 2 )
+     , className =? "nautilus" --> doShift ( myWorkspaces !! 3 )
+     , className =? "org.gnome.Nautilus" --> doShift ( myWorkspaces !! 3 )
+     , title =? "Mozilla Thunderbird" --> doShift ( myWorkspaces !! 4 )
+     , className =? "Evolution"      --> doShift ( myWorkspaces !! 4 )
+     , className =? "mpv"             --> doShift ( myWorkspaces !! 6 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
-     , (className =? "evolution" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
+     , (className =? "thunderbird" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      , isFullscreen -->  doFullFloat
      ]
 
@@ -382,7 +386,7 @@ myKeys =
         , ("M-b", spawn (myBrowser))
         , ("M-m", spawn (myMail))
         , ("M-f", spawn (myFiles))
-        , ("M-e", spawn "emacsclient --eval \"(emacs-everywhere)\"")
+        , ("M-e", spawn (myEditor))
 
     -- KB_GROUP Screenshot
         , ("M-S-s", spawn "flameshot gui")
@@ -471,8 +475,14 @@ myIcons = composeAll
   , className =? "Emacs" --> appIcon "\xe7cf"
   , className =? "Alacritty" --> appIcon "\xe795"
   , className =? "Pcmanfm" --> appIcon "\xe5fe"
+  , className =? "Nautilus" --> appIcon "\xe5fe"
+  , className =? "org.gnome.Nautilus" --> appIcon "\xe5fe"
   , className =? "thunderbird-esr" --> appIcon "\xf370"
+  , className =? "thunderbird" --> appIcon "\xf370"
+  , className =? "Mail" --> appIcon "\xf370"
   , className =? "Discord" --> appIcon "\xf1ff"
+  , className =? "mpv" --> appIcon "<fn=1>\xf03d</fn>"
+  , className =? "vlc" --> appIcon "<fn=1>\xf03d</fn>"
   ]
 
 myIconConfig :: IconConfig
@@ -600,7 +610,7 @@ pickWallpaper dir = do
     files <- getAllFiles dir
     pickRandom files >>= \case
         Just f  -> return f
-        Nothing -> return "/usr/share/backgrounds/cosmic/orion_nebula_nasa_heic0601a" -- fallback
+        Nothing -> return "/usr/share/backgrounds/nwg-shell/nwg-simple.jpg" -- fallback
 
 main :: IO ()
 main = do

@@ -43,7 +43,7 @@ alias ls='lsd'
 alias l='lsd -la'
 alias cat='bat --paging=never'
 alias du='dust'
-alias e='emacsclient -t -r -n -a emacs'
+alias e='emacsclient -r -n -a emacs'
 
 if [[ -z "$INSIDE_EMACS" ]]; then # not inside emacs
   [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
@@ -55,3 +55,7 @@ bind 'set keyseq-timeout 1'
 # enable fzf tab completion
 #source ~/.config/fzf-tab-completion/bash/fzf-bash-completion.sh
 #bind -x '"\t": fzf_bash_completion'
+
+source /home/pascal/.config/broot/launcher/bash/br
+
+export STM32_PRG_PATH=/home/pascal/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
